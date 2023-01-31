@@ -22,12 +22,12 @@ include __DIR__ . "./functions.php";
 
         </div>
         <div class="box-bianco">
-            <form action="./index.php" method="GET">
+            <form action="./mostraPassword.php" method="GET">
                 <p>Lunghezza password: <input type="number" placeholder="Inserisci la lunghezza della password" name="numero"></p>
                 <button type="submit" class="invia">Invia</button>
                 <button type="submit" class="annulla">Annulla</button>
             </form>
-            <h3>La tua password è : <?php echo generaPassword($_GET["numero"]) ?></h3>
+            
         </div>
     </div>
 </body>
