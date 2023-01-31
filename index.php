@@ -1,10 +1,20 @@
+<?php 
+
+function generaPassword($numero){
+    $caratteri = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;':\"<>,.?/\\";
+    $password= "";
+    for($i = 0; $i < $numero; $i++){
+        $password .= $caratteri[rand(0, strlen($caratteri) - 1 )];
+
+    }
+
+    return $password;
+}
 
 
 
 
-
-
-
+?>
 
 
 <!DOCTYPE html>
@@ -24,11 +34,12 @@
 
         </div>
         <div class="box-bianco">
-            <form action="./index.php">
-                <p>Lunghezza password: <input type="number"></p>
+            <form action="./index.php" method="GET">
+                <p>Lunghezza password: <input type="number" placeholder="Inserisci la lunghezza della password" name="numero"></p>
                 <button type="submit" class="invia">Invia</button>
                 <button type="submit" class="annulla">Annulla</button>
             </form>
+            <h3>La tua password è : <?php echo generaPassword($_GET["numero"]) ?></h3>
         </div>
     </div>
 </body>
